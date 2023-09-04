@@ -1,2 +1,2 @@
 // List all documents with name="Holberton school" in school
-db.school.find({ name: { $eq: "Holberton school" Ò} })
+db.school.find({ name: "Holberton school" })
