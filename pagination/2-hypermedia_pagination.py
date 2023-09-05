@@ -55,8 +55,9 @@ class Server:
 
         hypermedia["data"] = current_page_data
 
+        total_pages = ceil(len(self.dataset()) / page_size)
         next_page = None
-        if self.get_page(page + 1) != []:
+        if page < total_pages:
             next_page = page + 1
         hypermedia["next_page"] = next_page
 
@@ -65,6 +66,6 @@ class Server:
             prev_page = page - 1
         hypermedia["prev_page"] = prev_page
 
-        hypermedia["total_pages"] = ceil(len(self.dataset()) / page_size)
+        hypermedia["total_pages"] = total_pages
 
         return hypermedia
