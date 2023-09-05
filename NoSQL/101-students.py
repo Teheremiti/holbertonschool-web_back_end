@@ -9,7 +9,7 @@ def top_students(mongo_collection):
     for student in mongo_collection.find():
         total = 0
         number_of_topics = 0
-        for topic in student['topics']:
+        for topic in student['topics'].values():
             topic_score = student['topics'][1]
             total += topic_score
             number_of_topics += 1
