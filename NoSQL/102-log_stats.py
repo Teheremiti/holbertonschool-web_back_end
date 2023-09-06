@@ -25,10 +25,10 @@ def print_status_checks(mongo_co):
 def get_logs_per_ip(mongo_co):
     """Returns a list of dicts with the Top 10 IPs with the most logs"""
     logs_per_ip = mongo_co.aggregate([
-        {'$group': {'IP': '$ip', 'logs': {'$sum': 1}}},
+        {'$group': {'_id': '$ip', 'logs': {'$sum': 1}}},
         {'$sort': {'logs': -1}},
         {'$limit': 10}
-    ])
+        ])
     return logs_per_ip
 
 
@@ -47,4 +47,4 @@ if __name__ == "__main__":
     print("IPs:")
     logs_per_ip = get_logs_per_ip(nginx_co)
     for ip_logs in logs_per_ip:
-        print("\t{}: {}".format(ip_logs.get('IP'), ip_logs.get('logs')))
+        print("\t{}: {}".format(ip_logs.get('_id'), ip_logs.get('logs')))
