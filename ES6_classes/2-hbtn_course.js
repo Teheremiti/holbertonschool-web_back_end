@@ -1,3 +1,4 @@
+/* eslint-disable */
 export default class HolbertonCourse {
     constructor(name, length, students) {
         this._name = name;
@@ -33,13 +34,13 @@ export default class HolbertonCourse {
 
     set students(newStudents) {
         if (!Array.isArray(newStudents)) {
-            throw new TypeError('Students must be an array of strings')
+            throw new TypeError('Students must be an array of strings');
         }
         for (student of newStudents) {
             if (typeof student !== 'string') {
-                throw new TypeError('Students must be an array of strings')
+                throw new TypeError('Students must be an array of strings');
             }
         }
-        this._students = newStudents
+        this._students = newStudents;
     }
 }
