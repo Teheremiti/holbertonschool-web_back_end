@@ -1,5 +1,5 @@
 /* eslint-disable */
-import Currency from './3currency.js'
+import Currency from './3-currency.js'
 
 export default class Pricing {
     constructor(amount, currency) {
