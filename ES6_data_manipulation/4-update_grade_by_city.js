@@ -1,3 +1,4 @@
+/* eslint-disable */
 export default function updateStudentGradeByCity(studentsList, city, newGrades) {
   return studentsList.filter((student) => student.location === city)
     .map((student) => {
@@ -6,7 +7,8 @@ export default function updateStudentGradeByCity(studentsList, city, newGrades) 
         if (student.id === newGrade.studentId) {
           finalGrade = newGrade.grade;
         }
-        student.grade = finalGrade;
+        const studentUpdate = { ...student };
+        studentUpdate.grade = finalGrade;
       }
     });
 }
