@@ -1,6 +1,6 @@
 /* eslint-disable */
 export default function cleanSet(set, startString) {
-  if (!startString || !(startString instanceof String)) {
+  if (!startString) {
     return '';
   }
 
@@ -8,7 +8,7 @@ export default function cleanSet(set, startString) {
   let sep = '';
   for (const ele of set.values()) {
     if (ele && ele.startsWith(startString)) {
-      string += sep + ele.slice(startString.length);
+      string += `${sep}${ele.slice(startString.length)}`;
       sep = '-';
     }
   }
