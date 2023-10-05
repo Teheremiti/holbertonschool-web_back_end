@@ -7,7 +7,7 @@ export default function cleanSet(set, startString) {
   const sep = '';
   for (const ele of set.values()) {
     if (ele && ele.startsWith(startString)) {
-      string += sep + ele.slice(startString.length);
+      string += `${sep}${ele.slice(startString.length)}`;
       sep = '-';
     }
   }
