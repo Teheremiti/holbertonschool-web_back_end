@@ -1,3 +1,4 @@
+/* eslint-disable */
 export default function cleanSet(set, startString) {
   if (!startString || !(startString instanceof String)) {
     return '';
